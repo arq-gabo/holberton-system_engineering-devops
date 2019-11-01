@@ -2,12 +2,12 @@
 #Make loop with 10 iteration but print "bad luck" in the
 #4to iteration and print "good luck" in the 8th iteration
 #in the other interation print "Holberton School"
-COUNT=0
-while [ $COUNT -lt 10 ];do
-    if [ $COUNT -eq 3 ];then
-	echo "Bad Luck"
-    elif [ $COUNT -eq 7 ];then
-	echo "Good luck"
+COUNT=1
+while [ $COUNT -le 10 ];do
+    if [ $COUNT -eq 4 ];then
+	echo "bad Luck"
+    elif [ $COUNT -eq 8 ];then
+	echo "good luck"
     else
 	echo "Holberton School"
     fi
