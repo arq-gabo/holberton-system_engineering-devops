@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-#Script for print 9 times "Holberton School"
-#and print "Hi" in the 9 iteration
-COUNT=0
-while [ $COUNT -lt 9 ];do
+#Script for print 9 times "Holberton School" and print "Hi" in the 9 iteration
+COUNT=1
+while [ $COUNT -lt 10 ];do
     echo "Holberton School"
-    if [ $COUNT -eq 7 ];then
+    if [ $COUNT -eq 8 ];then
 	echo "Hi"
     fi
     let COUNT=COUNT+1
