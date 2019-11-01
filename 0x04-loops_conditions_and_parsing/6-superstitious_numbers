@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#Print "bad luck from China" in the 4to iterator
+#Print "bad luck from Japan" in the 9ne iterator
+#Print "bad luck from Italy" in the 17tn iterator
+#if you don't print the value
+I=1
+while [ $I != "21" ];do
+    if [ $I == "5" ];then
+	echo "bad luck from China"
+	echo $I
+    elif [ $I == "10" ];then
+	echo "bad luck from Japan"
+	echo $I
+    elif [ $I == "18" ];then
+	echo "bad luck from Italy"
+	echo $I
+    else
+	echo $I
+    fi
+    let I=I+1
+done
