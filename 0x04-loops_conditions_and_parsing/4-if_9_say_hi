@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
-#Print "Holberton School" 9 times
-#and "Hi" in the 9 iteration
-COUNTER=0
-while [ $COUNTER -lt 10 ];do
-    if [ $COUNTER -ne 8 ]; then
-	echo "Holberton School"
-    else
-	echo "Hi!"
+COUNT=0
+while [ $COUNT -lt 9 ];do
+    echo "Holberton School"
+    if [ $COUNT -eq 7 ];then
+	echo "Hi"
     fi
-    let COUNTER=COUNTER+1
+    let COUNT=COUNT+1
 done
