@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Print 10 times "Holberton School" using until loop
 COUNTER=10
 until [ $COUNTER -lt 1 ];do
       echo "Holberton School"
