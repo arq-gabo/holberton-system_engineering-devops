@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+COUNT=0
+while [ $COUNT -lt 10 ];do
+    if [ $COUNT -eq 3 ];then
+	echo "Bad Luck"
+    elif [ $COUNT -eq 7 ];then
+	echo "Good luck"
+    else
+	echo "Holberton School"
+    fi
+    let COUNT=COUNT+1
+done
