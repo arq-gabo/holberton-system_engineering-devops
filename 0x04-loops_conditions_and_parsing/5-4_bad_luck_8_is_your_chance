@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#Make loop with 10 iteration but print "bad luck" in the
+#4to iteration and print "good luck" in the 8th iteration
+#in the other interation print "Holberton School"
 COUNT=0
 while [ $COUNT -lt 10 ];do
     if [ $COUNT -eq 3 ];then
