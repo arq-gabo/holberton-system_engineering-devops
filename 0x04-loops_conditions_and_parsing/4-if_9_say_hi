@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#Script for print 9 times "Holberton School"
+#and print "Hi" in the 9 iteration
 COUNT=0
 while [ $COUNT -lt 9 ];do
     echo "Holberton School"
