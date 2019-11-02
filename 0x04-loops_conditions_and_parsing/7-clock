@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Print the hours from 0:00 to 12:59
+H=0
+while [ $H -le 12 ];do
+    echo "Hour: $H"
+    M=1
+    while [ $M -le 59 ];do
+	echo "$M"
+	let M=M+1
+    done
+    let H=H+1
+done
