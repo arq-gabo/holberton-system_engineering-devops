@@ -4,18 +4,17 @@
 #Print "bad luck from Italy" in the 17tn iterator
 #if you don't print the value
 I=1
-while [ $I != "21" ];do
-    if [ $I == "5" ];then
-	echo "bad luck from China"
-	echo $I
-    elif [ $I == "10" ];then
-	echo "bad luck from Japan"
-	echo $I
-    elif [ $I == "18" ];then
-	echo "bad luck from Italy"
-	echo $I
-    else
-	echo $I
-    fi
+while [ $I -le 20 ];do
+    echo $I
+    case $I in 4)
+	    echo "bad luck from China"
+	    ;;
+    9)
+	    echo "bad luck from Japan"
+	    ;;
+    17)
+	    echo "bad luck from Italy"
+	    ;;
+    esac
     let I=I+1
 done
