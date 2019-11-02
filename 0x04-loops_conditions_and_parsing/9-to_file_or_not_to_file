@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Script for show information of the holberton file
 FILE=holbertonschool
 if [ -e $FILE ];then
     echo "holbertonschool file exists"
