@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Script with show "to inifinity and beyond"
+#and show "I am invincible!!!" we executed
+#file 67-kill_me_now_made_easy
+trap "echo I am invincible!!!" SIGTERM
+
+while [[ $True ]];do
+      echo "To infinity and beyond"
+      sleep 2
+done
