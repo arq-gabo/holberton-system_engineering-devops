@@ -4,7 +4,7 @@
 #file 67-kill_me_now_made_easy
 trap "echo I am invincible!!!" SIGTERM
 
-while [[ $True ]];do
+while true;do
       echo "To infinity and beyond"
       sleep 2
 done
