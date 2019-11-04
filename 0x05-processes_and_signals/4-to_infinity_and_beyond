@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Script with show the write "To infinity and beyond"
+#whit delay in 2 seconds
+for (( ; ; )); do
+    echo "To infinity and beyond"
+    sleep 2
+done
