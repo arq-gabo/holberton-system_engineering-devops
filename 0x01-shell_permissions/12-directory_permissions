@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir --mode=775 dir_holberton
+mkdir -m=775 dir_holberton
