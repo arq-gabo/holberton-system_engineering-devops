@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Scrip show the listening sockets and PID
+netstat -lp
