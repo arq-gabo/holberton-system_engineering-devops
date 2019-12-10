@@ -1,3 +1,6 @@
-#!/usr/bin/env bash
-#Client configuration file 
-ssh dev
+Host *
+     HostName 35.237.170.159
+     User ubuntu
+     Port 22
+     IdentityFile ~/.ssh/holberton
+     PasswordAuthentication No
