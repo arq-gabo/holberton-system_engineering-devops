@@ -1,5 +1,3 @@
 #Create a manifest that kill a process named killmenow
-file { 'killmenow' :
-ensure   =>'exec',
-provider =>'pkill',
+exec { 'usr/bin/pkill killmenow':
 }
