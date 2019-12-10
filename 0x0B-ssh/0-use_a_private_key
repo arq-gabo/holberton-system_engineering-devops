@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Bash script with use ssh for connect to server using public key
+ssh -i ~/.ssh/holberton ubuntu@35.237.170.159
