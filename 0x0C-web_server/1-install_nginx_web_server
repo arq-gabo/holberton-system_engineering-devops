@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #Install ngnix in the web server
-ssh ubuntu@35.237.170.159 sudo apt-get install update
-ssh ubuntu@35.237.170.159 sudo apt-get upgrade
-ssh ubuntu@35.237.170.159 sudo apt-get install nginx -y
-sudo echo "Holberton School for the win" > /var/www/html/index.nginx-debian.html
+sudo apt-get install update
+sudo apt-get upgrade
+sudo apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+service nginx start
