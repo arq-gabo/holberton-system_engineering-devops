@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #Install ngnix in the web server
-ssh ubuntu@35.237.170.159 sudo apt-get install update
-ssh ubuntu@35.237.170.159 wudo apt-get upgrade
-ssh ubuntu@35.237.170.159 sudo apt-get install nginx -y
+sudo apt-get install update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
