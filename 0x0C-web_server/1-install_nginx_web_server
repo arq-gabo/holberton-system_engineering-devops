@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Install ngnix in the web server
+ssh ubuntu@35.237.170.159:80 sudo apt-get install ngnix -y
