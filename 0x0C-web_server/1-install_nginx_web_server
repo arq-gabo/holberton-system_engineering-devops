@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Install ngnix in the web server
-sudo apt update
-sudo apt -y install nginx
+sudo apt-get update
+sudo apt-get -y install nginx
 sudo service nginx start
 sudo echo "Holberton School" | sudo tee /var/www/html/index.html
 sudo service nginx restart
