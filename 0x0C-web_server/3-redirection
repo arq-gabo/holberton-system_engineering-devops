@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-#Script for redirection 301
+#Install ngnix in the web server
 sudo apt-get update
 sudo apt-get -y install nginx
 echo "Holberton School" | sudo tee /var/www/html/index.html
-sudo service nginx restart
-sudo sed -i "rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4" etc/nginx/sites-avaible/default permanet;
+str="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "37i $str" /etc/nginx/sites-available/default
 sudo service nginx restart
