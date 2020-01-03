@@ -13,7 +13,7 @@ mode http
 balance roundrobin
 option forwardfor
 option httpchk HEAD / HTTP/1.1rnHost:localhost
-server 945-web-01 35.237.170.159:80 check server
-945-web-02 35.231.101.25:80 check"
+server 945-web-01 35.237.170.159:80 check
+server 945-web-02 35.231.101.25:80 check"
 echo -e "$front\n$back" | sudo tee -a /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
