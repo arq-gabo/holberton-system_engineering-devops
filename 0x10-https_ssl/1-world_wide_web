@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 #Scrip for show information of subdomains
 
-if [ $# -eq 1 ];then
-    dig "www.$1" | awk '/ANSWER SECTION:/{getline; printf "The subdomain www is a %s record and points to %s\n", $4, $5}'
-    dig "lb-01.$1" | awk '/ANSWER SECTION:/{getline; printf "The subdomain lb-01 is a %s record and points to %s\n", $4, $5}'
-    dig "web-01.$1" | awk '/ANSWER SECTION:/{getline; printf "The subdomain web-01 is a %s record and points to %s\n", $4, $5}'
-    dig "web-02.$1" | awk '/ANSWER SECTION:/{getline; printf "The subdomain web-02 is a %s record and points to %s\n", $4, $5}'
-else
+show_dns(){
     dig "$2.$1" | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", sub_dom, $4, $5}' sub_dom="$2"
+}
+
+if [ $# -eq 1 ];then
+    for sub_dom in "www" "lb-01" "web-01" "web-02";do
+	show_dns "$1" "$sub_dom"
+    done
+else
+    show_dns "$1" "$2"
 fi
