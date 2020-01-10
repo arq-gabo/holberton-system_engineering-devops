@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Script with write whoami and accept a argument
+sudo --user "$@" whoami
