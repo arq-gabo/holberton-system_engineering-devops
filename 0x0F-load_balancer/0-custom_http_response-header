@@ -3,5 +3,5 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 VALUE="add_header X-Served-By $(hostname);"
-sudo sed -i "44i ${VALUE}" /etc/nginx/sites-enabled/default
+sudo sed -i "50i ${VALUE}" /etc/nginx/sites-enabled/default
 sudo service nginx restart
