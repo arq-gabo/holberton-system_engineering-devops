@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Script of bash to kill apache 2, start nginx on port 8080 and run
-pkill -u root apache2
-chown nginx:nginx /etc/nginx/nginx.conf
-chmod  700 /etc/nginx/nginx.conf
-sed -i 's/80 default_server/8080 default_server' /etc/nginx/sites-available/default
+sudo pkill -u root apache2
+sudo chown nginx:nginx /etc/nginx/nginx.conf
+sudo chmod  700 /etc/nginx/nginx.conf
+sudo sed -i 's!80 !8080 !' /etc/nginx/sites-available/default
 sudo -u nginx service nginx restart
