@@ -43,6 +43,7 @@ frontend 945-lb-01
         default_backend My_Web_Servers
         option forwardfor
 backend www-https
+	bind *:443 crt /etc/haproxy/ssl/www.deventy.tech.pem
         balance roundrobin
         server 945-web-01 35.237.170.159:80 check
         server 945-web-02 35.231.101.25:80 check
