@@ -2,5 +2,6 @@
 #Script for configure my Mginx server to have custon 404 page
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo sed -i "50i \\\t\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+VALUE="add_header X-Served-By $(HOSTNAME);"
+sudo sed -i "50i ${VALUE}" /etc/nginx/sites-enabled/default 
 sudo service nginx restart
