@@ -1,14 +1,6 @@
 #!/usr/bin/env bash
 #Script for configure my Mginx server to have custon 404 page
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y install nginx
-echo "Holberton School" | sudo tee /var/www/html/index.html
-str="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
-sudo sed -i "37i $str" /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-str2="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}"
-sudo sed -i "40i $str2" /etc/nginx/sites-available/default
-str3="a\\\tadd_header X-Served-By \"\$HOSTNAME\";"
-sudo sed -i "/server_name_;/ $str3" /etc/nginx/sites-available/default
-sudo service nginx reload
+sudo sed -i "50i \\\t\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sudo service nginx restart
