@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Script for make backup
+DATE=$(date +"%d-%m-%Y")
+mysqldump -u root -p"$1" --opt --all-databases > backup.sql
+cat backup.sql | gzip -c | cat > "${DATE}".tar.gz
