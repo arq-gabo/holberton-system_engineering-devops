@@ -2,7 +2,7 @@
 
 """Module for export to in CSV file"""
 
-
+from requests import get
 import requests
 import sys
 import json
