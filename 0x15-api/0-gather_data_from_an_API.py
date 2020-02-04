@@ -1,4 +1,4 @@
-!#/usr/bin/python3
+#!/usr/bin/python3
 
 """Module using REST API return information TODO list progress
 given employed ID"""
@@ -11,6 +11,17 @@ import json
 
 if __name__ == '__main__':
 
-    request = requests.get('https://jsonplaceholder.typicode.com/users/{}'.format(sys.argv[1]))
-    res = request.json()
-    print(res)
+    url = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}'.format(sys.argv[1]))
+    res = url.json()
+
+    todo_list = requests.get(
+        'https://jsonplaceholder.typicode.com/todos?userId={}'.format(sys.argv[1]))
+    res2 = todo_list.json()
+    print(res2)
+
+
+"""
+    name_employe = res['name']
+    print("Employee {} is done with:".format(name_employe)
+"""
