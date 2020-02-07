@@ -11,7 +11,7 @@ def number_of_subscribers(subreddit):
     headers = {'User_Agent': 'arq-gabo'}
     try:
         reddit = get('https://www.reddit.com/r/{}/about.json'.format(
-            subreddit), headers=headers).json()
+            subreddit), headers=headers)
         sub = reddit.get('data').get('subscribers')
         return(sub)
     except:
