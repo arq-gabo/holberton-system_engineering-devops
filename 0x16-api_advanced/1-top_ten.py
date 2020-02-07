@@ -11,13 +11,13 @@ def top_ten(subreddit):
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     headers = {"User-Agent":  "arq-gabo"}
     r = requests.get(url, headers=headers)
-    post = r.json().get("data").get("children")
+    posts = r.json().get("data").get("children")
     try:
-        act_sub = post[0].get('data').get('subreddit').lower()
-        if len(post) > 0 and act_sub == subreddit.lower():
-            for count, posts in enumerate(post):
-                if count < 10:
-                    print(posts.get("data").get("title"))
+        actual_subreddit = posts[0].get('data').get('subreddit').lower()
+        if len(posts) > 0 and actual_subreddit == subreddit.lower():
+            for counter, post in enumerate(posts):
+                if counter < 10:
+                    print(post.get("data").get("title"))
                 else:
                     break
         else:
