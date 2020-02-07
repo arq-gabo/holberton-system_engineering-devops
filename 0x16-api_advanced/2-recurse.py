@@ -6,17 +6,27 @@ Module API return a list the titles in recursive form
 import requests
 
 
-def recurse(subreddit, counter=0, after=None, hot_list=[]):
+def recurse(subreddit, hot_list=[]):
     """Function recursive"""
-    if counter != 0 and after is None:
+    if len(hot_list) == 0:
+        url = "https://api.reddit.com/r/{}/hot".format(subreddit)
+        headers={"User-Agent": "arq-gabo"}
+        requ = requests.get(url, headers=headers)
+    else:
+        idx = len(hot_list) - 1
+        requ = requests.get(
+            "https://api.reddit.com/r/{}/hot".format(subreddit),
+            headers={"User-Agent": "cualquiera"},
+            params={'after': hot_list[idx]})
+        del hot_list[idx]
+    if requ.status_code != 200:
+        return(None)
+    request = requ.json().get('data').get('children')
+    for element in request:
+        hot_list.append(element.get('data').get('title'))
+    sig = requ.json().get('data').get('after')
+    if sig is not None:
+        hot_list.append(sig)
+        return recurse(subreddit, hot_list)
+    else:
         return(hot_list)
-    headers = {"User-Agent": "arq-gabo"}
-    payload = {} if counter == 0 else {'after': after, 'count': 25}
-    url = 'https://www.reddit.com/r/{}.json'.format(subreddit)
-    r = requests.get(url, headers=headers, allow_redirects=False,
-                     params=payload)
-    ps = r.json().get("data").get("children")
-    posts = [post.get("data").get("title") for post in ps]
-    after = r.json().get("data").get("after")
-    hot_list = hot_list + posts
-    return recurse(subreddit, hot_list + posts, counter+1, after)
