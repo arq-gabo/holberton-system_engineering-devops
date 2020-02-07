@@ -3,7 +3,7 @@
 """
 Module REST API for return number of subcriptons of reddit
 """
-import requests
+from requests import get
 
 
 def number_of_subscribers(subreddit):
