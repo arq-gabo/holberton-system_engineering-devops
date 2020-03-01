@@ -1,3 +1,4 @@
+#Manifest fixes file limit for user holberton
 exec { 'fix limits.conf hard':
   command => 'sed -i "s/hard nofile 5/rd nofile 1024/g" limits.conf',
   path    => '/bin/',
